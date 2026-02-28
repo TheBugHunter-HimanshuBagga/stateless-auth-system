@@ -43,6 +43,7 @@ public class User implements UserDetails {
 
 
     // Whether the user is allowed to authenticate or not.
+    //These methods define the authentication eligibility status of a user account.
     @Override
     public boolean isAccountNonExpired() {
         return true;
