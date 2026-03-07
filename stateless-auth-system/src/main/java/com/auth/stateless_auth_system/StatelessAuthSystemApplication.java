@@ -11,3 +11,23 @@ public class StatelessAuthSystemApplication {
 	}
 
 }
+
+
+/*
+Request
+ ↓
+JwtAuthFilter
+ ↓
+Extract Token
+ ↓
+JwtService → getUserIdFromToken()
+ ↓
+UserRepository → load user
+ ↓
+Create Authentication Object
+ ↓
+SecurityContextHolder.setAuthentication()
+ ↓
+Controller executes
+
+ */
