@@ -24,9 +24,14 @@ public class AuthService {
     private final PasswordEncoder passwordEncoder;
 
     public AuthResponse register(AuthRequest request){
+
+        if(userRepository.findByEmail(request.getEmail()).isPresent()){
+            throw new RuntimeException("User already exists with email: " + request.getEmail());
+        }
+
         User user = User.builder() // creating a user object to store in the database
                 .email(request.getEmail())
-                .password(request.getPassword())
+                .password(passwordEncoder.encode(request.getPassword())) // used for hashing password
                 .role(Role.USER)
                 .build();
         userRepository.save(user);

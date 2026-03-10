@@ -31,3 +31,19 @@ SecurityContextHolder.setAuthentication()
 Controller executes
 
  */
+
+
+/*
+
+ Register endpoint
+ Login endpoint
+ Access Token (JWT)
+ Refresh Token
+ Password encryption (BCrypt)
+ Spring Security configuration
+ JwtAuthFilter (stateless authentication)
+ UserDetailsService integration
+ MySQL database persistence
+ Duplicate email prevention
+
+ */
