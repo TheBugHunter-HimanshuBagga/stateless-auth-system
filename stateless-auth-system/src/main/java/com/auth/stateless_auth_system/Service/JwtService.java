@@ -33,7 +33,7 @@ public class JwtService {
                 .compact();
     }
 
-    private String generateRefreshToken(User user){
+    public String generateRefreshToken(User user){
         return Jwts.builder()
                 .subject(String.valueOf(user.getId()))
                 .issuedAt(new Date())
